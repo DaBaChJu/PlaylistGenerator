@@ -69,6 +69,7 @@
 			// 
 			// GUI_menu_principal
 			// 
+			this.GUI_menu_principal.AllowDrop = true;
 			this.GUI_menu_principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
             this.toolStripMenuItem1});
@@ -89,14 +90,14 @@
             this.enregistrerSousToolStripMenuItem,
             this.quitterToolStripMenuItem});
 			this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-			this.fichierToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+			this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
 			this.fichierToolStripMenuItem.Text = "Fichier";
 			// 
 			// nouveauToolStripMenuItem
 			// 
 			this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
 			this.nouveauToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
 			this.nouveauToolStripMenuItem.Text = "&Nouveau";
 			this.nouveauToolStripMenuItem.Click += new System.EventHandler(this.nouveauToolStripMenuItem_Click);
 			// 
@@ -104,14 +105,14 @@
 			// 
 			this.ouvrirUnePlaylistToolStripMenuItem.Name = "ouvrirUnePlaylistToolStripMenuItem";
 			this.ouvrirUnePlaylistToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-			this.ouvrirUnePlaylistToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.ouvrirUnePlaylistToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
 			this.ouvrirUnePlaylistToolStripMenuItem.Text = "&Ouvrir une playlist...";
 			this.ouvrirUnePlaylistToolStripMenuItem.Click += new System.EventHandler(this.ouvrirUnePlaylistToolStripMenuItem_Click);
 			// 
 			// ajouterDesVidéosToolStripMenuItem
 			// 
 			this.ajouterDesVidéosToolStripMenuItem.Name = "ajouterDesVidéosToolStripMenuItem";
-			this.ajouterDesVidéosToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.ajouterDesVidéosToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
 			this.ajouterDesVidéosToolStripMenuItem.Text = "&Ajouter des vidéos...";
 			this.ajouterDesVidéosToolStripMenuItem.Click += new System.EventHandler(this.ajouterDesVidéosToolStripMenuItem_Click);
 			// 
@@ -119,7 +120,7 @@
 			// 
 			this.enregistrerSousToolStripMenuItem.Name = "enregistrerSousToolStripMenuItem";
 			this.enregistrerSousToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.enregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.enregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
 			this.enregistrerSousToolStripMenuItem.Text = "Enregistrer &Sous...";
 			this.enregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.enregistrerSousToolStripMenuItem_Click);
 			// 
@@ -127,7 +128,7 @@
 			// 
 			this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
 			this.quitterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-			this.quitterToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.quitterToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
 			this.quitterToolStripMenuItem.Text = "&Quitter";
 			this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
 			// 
@@ -143,7 +144,7 @@
 			// 
 			this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
 			this.aProposToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.aProposToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+			this.aProposToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.aProposToolStripMenuItem.Text = "A propos";
 			this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
 			// 
@@ -153,19 +154,19 @@
             this.ajouterDesVidéosToolStripMenuItem1,
             this.ajouterUnePlaylistToolStripMenuItem});
 			this.GUI_menu_contextuel.Name = "GUI_menu_contextuel";
-			this.GUI_menu_contextuel.Size = new System.Drawing.Size(180, 48);
+			this.GUI_menu_contextuel.Size = new System.Drawing.Size(186, 48);
 			// 
 			// ajouterDesVidéosToolStripMenuItem1
 			// 
 			this.ajouterDesVidéosToolStripMenuItem1.Name = "ajouterDesVidéosToolStripMenuItem1";
-			this.ajouterDesVidéosToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+			this.ajouterDesVidéosToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
 			this.ajouterDesVidéosToolStripMenuItem1.Text = "Ajouter des vidéos...";
 			this.ajouterDesVidéosToolStripMenuItem1.Click += new System.EventHandler(this.ajouterDesVidéosToolStripMenuItem_Click);
 			// 
 			// ajouterUnePlaylistToolStripMenuItem
 			// 
 			this.ajouterUnePlaylistToolStripMenuItem.Name = "ajouterUnePlaylistToolStripMenuItem";
-			this.ajouterUnePlaylistToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.ajouterUnePlaylistToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
 			this.ajouterUnePlaylistToolStripMenuItem.Text = "Ajouter une playlist...";
 			// 
 			// GUI_listBox_liste_de_gauche
@@ -178,11 +179,11 @@
 			this.GUI_listBox_liste_de_gauche.Size = new System.Drawing.Size(222, 433);
 			this.GUI_listBox_liste_de_gauche.TabIndex = 1;
 			this.GUI_listBox_liste_de_gauche.SelectedIndexChanged += new System.EventHandler(this.GUI_listBox_liste_de_gauche_SelectedIndexChanged);
-			this.GUI_listBox_liste_de_gauche.Leave += new System.EventHandler(this.GUI_listBox_liste_de_gauche_Leave);
 			this.GUI_listBox_liste_de_gauche.DragDrop += new System.Windows.Forms.DragEventHandler(this.GUI_listBox_liste_de_gauche_DragDrop);
 			this.GUI_listBox_liste_de_gauche.DragEnter += new System.Windows.Forms.DragEventHandler(this.GUI_DragEnter);
 			this.GUI_listBox_liste_de_gauche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GUI_listBox_liste_de_gauche_KeyPress);
 			this.GUI_listBox_liste_de_gauche.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GUI_listBox_liste_de_gauche_KeyUp);
+			this.GUI_listBox_liste_de_gauche.Leave += new System.EventHandler(this.GUI_listBox_liste_de_gauche_Leave);
 			// 
 			// GUI_listBox_liste_de_droite
 			// 
@@ -286,7 +287,7 @@
 			this.GUI_button_bouton_haut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.GUI_button_bouton_haut.Location = new System.Drawing.Point(645, 203);
 			this.GUI_button_bouton_haut.Name = "GUI_button_bouton_haut";
-			this.GUI_button_bouton_haut.Size = new System.Drawing.Size(29, 23);
+			this.GUI_button_bouton_haut.Size = new System.Drawing.Size(23, 23);
 			this.GUI_button_bouton_haut.TabIndex = 19;
 			this.GUI_button_bouton_haut.Text = "↑";
 			this.GUI_button_bouton_haut.UseVisualStyleBackColor = true;
@@ -298,7 +299,7 @@
 			this.GUI_button_bouton_bas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.GUI_button_bouton_bas.Location = new System.Drawing.Point(645, 233);
 			this.GUI_button_bouton_bas.Name = "GUI_button_bouton_bas";
-			this.GUI_button_bouton_bas.Size = new System.Drawing.Size(29, 23);
+			this.GUI_button_bouton_bas.Size = new System.Drawing.Size(23, 23);
 			this.GUI_button_bouton_bas.TabIndex = 20;
 			this.GUI_button_bouton_bas.Text = "↓";
 			this.GUI_button_bouton_bas.UseVisualStyleBackColor = true;
@@ -391,6 +392,7 @@
 			// 
 			// Form1
 			// 
+			this.AllowDrop = true;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(910, 469);
 			this.Controls.Add(this.GUI_textBox_searchbox);
@@ -421,9 +423,9 @@
 			this.MainMenuStrip = this.GUI_menu_principal;
 			this.Name = "Form1";
 			this.Text = "Générateur de Playlist v2";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
 			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.GUI_DragEnter);
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.GUI_menu_principal.ResumeLayout(false);
 			this.GUI_menu_principal.PerformLayout();
 			this.GUI_menu_contextuel.ResumeLayout(false);

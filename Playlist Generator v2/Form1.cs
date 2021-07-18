@@ -144,7 +144,17 @@ namespace Playlist_Generator_v2
 		private void GUI_DragEnter(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
-				e.Effect = DragDropEffects.Copy;
+			{
+				if (sender == GUI_listBox_liste_de_gauche)
+				{
+					e.Effect = DragDropEffects.Copy; 
+				}
+				else
+				{
+					e.Effect = DragDropEffects.Move;
+				}
+			}
+				
 		}
 
 		#endregion DragEnter générique
@@ -1069,15 +1079,35 @@ namespace Playlist_Generator_v2
 					bool bFound = false;
 					int nIndex = GUI_listBox_liste_de_gauche.SelectedIndex + 1;
 
-					//recherche la chaine suivante contenant la combinaison de touche recherchée
-					while (!bFound && nIndex < GUI_listBox_liste_de_gauche.Items.Count)
+					if (GUI_checkBox_tri_par_priorité.CheckState == CheckState.Checked)
 					{
 
-						if ((GUI_listBox_liste_de_gauche.Items[nIndex] as string).Contains(GUI_textBox_searchbox.Text))
-							bFound = true;
-						else
-							nIndex++;
+						//recherche la chaine suivante contenant la combinaison de touche recherchée
+						//dans une liste triée par priorité
+						while (!bFound && nIndex < GUI_listBox_liste_de_gauche.Items.Count)
+						{
 
+							if (liste_fichiers_priotri[nIndex].nom.ToLower().Contains(GUI_textBox_searchbox.Text.ToLower()))
+								bFound = true;
+							else
+								nIndex++;
+
+						}
+					}
+					else
+					{
+
+						//recherche la chaine suivante contenant la combinaison de touche recherchée
+						//dans une liste triée par nom
+						while (!bFound && nIndex < GUI_listBox_liste_de_gauche.Items.Count)
+						{
+
+							if (liste_fichiers[nIndex].nom.ToLower().Contains(GUI_textBox_searchbox.Text.ToLower()))
+								bFound = true;
+							else
+								nIndex++;
+
+						}
 					}
 
 					//non trouvé en partant de la sélection courante,recherche depuis le début
@@ -1086,14 +1116,35 @@ namespace Playlist_Generator_v2
 
 						nIndex = 0;
 
-						while (!bFound && nIndex < GUI_listBox_liste_de_gauche.SelectedIndex)
+						if (GUI_checkBox_tri_par_priorité.CheckState == CheckState.Checked)
 						{
 
-							if ((GUI_listBox_liste_de_gauche.Items[nIndex] as string).Contains(GUI_textBox_searchbox.Text))
-								bFound = true;
-							else
-								nIndex++;
+							//recherche la chaine suivante contenant la combinaison de touche recherchée
+							//dans une liste triée par priorité
+							while (!bFound && nIndex < GUI_listBox_liste_de_gauche.SelectedIndex)
+							{
 
+								if (liste_fichiers_priotri[nIndex].nom.ToLower().Contains(GUI_textBox_searchbox.Text.ToLower()))
+									bFound = true;
+								else
+									nIndex++;
+
+							}
+						}
+						else
+						{
+
+							//recherche la chaine suivante contenant la combinaison de touche recherchée
+							//dans une liste triée par nom
+							while (!bFound && nIndex < GUI_listBox_liste_de_gauche.SelectedIndex)
+							{
+
+								if (liste_fichiers[nIndex].nom.ToLower().Contains(GUI_textBox_searchbox.Text.ToLower()))
+									bFound = true;
+								else
+									nIndex++;
+
+							}
 						}
 
 					}
