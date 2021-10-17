@@ -70,6 +70,12 @@ namespace Playlist_Generator_v2
 		bool bListeDroiteDernièreFocusée = false;
 
 		/// <summary>
+		/// Gère l'effacement de la recherche
+		/// de la liste de gauche
+		/// </summary>
+		private static bool efface_apres_2_entree = false;
+
+		/// <summary>
 		/// Nombre total de fichiers qui seront dans la liste finale
 		/// </summary>
 		int nPrioritéTotale;
@@ -88,7 +94,6 @@ namespace Playlist_Generator_v2
 		/// Boite de dialogue d'enregistrement globale
 		/// </summary>
 		SaveFileDialog save_file_dialog = new SaveFileDialog();
-
 
 		#endregion Données membres
 
@@ -423,7 +428,9 @@ namespace Playlist_Generator_v2
 		private void bouton_éditer_Click(object sender, EventArgs e)
 		{
 
-			ListBox GUI_liste_raccourci=null;
+			ListBox GUI_liste_raccourci = null;
+
+#warning Currently crash null ref on edit button click
 
 			string str_chemin_courant=null;
 			string str_nom_fichier_courant=null;
@@ -519,6 +526,8 @@ namespace Playlist_Generator_v2
 					else
 					{
 
+						string nouveau_nom_chemin_fichier = GUI_textBox_nom_chemin_fichier.Text;
+
 						GUI_textBox_nom_chemin_fichier.ReadOnly = true;
 						GUI_button_bouton_éditer.Text = "Edit";
 
@@ -547,7 +556,7 @@ namespace Playlist_Generator_v2
 								nPrioritéTotale -= nPriorité;
 
 								//Ajout de la nouvelle entrée
-								nIndex=AjouteFichier(GUI_textBox_nom_chemin_fichier.Text, nPriorité);
+								nIndex=AjouteFichier(nouveau_nom_chemin_fichier, nPriorité);
 
 								//Mise à jour de la sélection dans la liste graphique
 								GUI_liste_raccourci.SelectedIndex = nIndex;
@@ -567,7 +576,7 @@ namespace Playlist_Generator_v2
 							{
 
 								//récupération de l'index de la liste non sélectionnée (tri par priorité ou alpha)
-								nIndex_liste_gauche_alternative = liste_fichiers_finale.IndexOf(liste_fichiers[nIndex]);
+								nIndex_liste_gauche_alternative = liste_fichiers_priotri.IndexOf(liste_fichiers[nIndex]);
 
 								//récupération de la priorité
 								nPriorité = liste_fichiers[nIndex].priorite;
@@ -582,7 +591,7 @@ namespace Playlist_Generator_v2
 								nPrioritéTotale -= nPriorité;
 
 								//Ajout de la nouvelle entrée
-								nIndex = AjouteFichier(GUI_textBox_nom_chemin_fichier.Text, nPriorité);
+								nIndex = AjouteFichier(nouveau_nom_chemin_fichier, nPriorité);
 
 								//Mise à jour de la sélection dans la liste graphique
 								GUI_liste_raccourci.SelectedIndex = nIndex;
@@ -1153,7 +1162,17 @@ namespace Playlist_Generator_v2
 					if (nIndex != GUI_listBox_liste_de_gauche.SelectedIndex)
 						GUI_listBox_liste_de_gauche.SelectedIndex = nIndex;
 					else
+					if (!efface_apres_2_entree)
+					{
 						System.Media.SystemSounds.Exclamation.Play();
+						efface_apres_2_entree = true;
+					}
+					else
+					{
+						efface_apres_2_entree = false;
+						GUI_textBox_searchbox.Text = "";
+						System.Media.SystemSounds.Beep.Play();
+					}
 
 					e.Handled = true;
 
